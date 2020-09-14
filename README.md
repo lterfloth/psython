@@ -16,13 +16,13 @@ import psython as psy
 
 ## Cronbach's alpha - with "if deleted"
 
-This package is for calculating Cronbach's alpha of an entire dataset with an "if deleted" table for finding items that should be removed.
+This package is for calculating Cronbach's alpha of an entire dataset with a "if deleted" table for finding items that should be removed.
 
 The package is using the pingouin package for the actuall calculation of Coronbach's alpha.
 
 ### Usage
 
-Here an example of the SAQ DataFrame (q3r = q3 reversed):
+Here is an example of the SAQ DataFrame (q3r = q3 reversed):
 
 <div>
 
