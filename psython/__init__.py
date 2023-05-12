@@ -13,6 +13,9 @@ def cronbach_alpha_scale_if_deleted(df):
         scale_mean = sub_df.mean().sum()
         variance = sub_df.sum(axis=1).var()
         pr = pearsonr(sub_df.mean(axis=1), df[column])
-        result = result.append({'Item': column, "Scale Mean if Item Deleted": scale_mean, "Scale Variance if Item Deleted": variance,
-                                "Corrected Item-Total Correlation": pr[0], "Cronbach's Alpha if Item Deleted": ac[0]}, ignore_index=True)
+        temp = pd.DataFrame(
+            [{'Item': column, "Scale Mean if Item Deleted": scale_mean, "Scale Variance if Item Deleted": variance,
+              "Corrected Item-Total Correlation": pr[0], "Cronbach's Alpha if Item Deleted": ac[0]}])
+        result = pd.concat([result, temp])
+
     return [gca, result]
